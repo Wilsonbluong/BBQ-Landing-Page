@@ -1,0 +1,232 @@
+*,
+::after,
+::before {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Source Sans Pro", sans-serif;
+  color: #404040;
+  text-align: center;
+  /* font-size: 1.125rem; */
+  /* font-weight: 300;
+  line-height: 1.6; */
+  /* border: 1px solid pink; */
+}
+
+/* img {
+  max-width: 100%;
+  display: block;
+} */
+
+/* =================
+   TYPOGRAPHY
+    ================= */
+
+h1 {
+  /* margin-top: 0; */
+  font-size: 2.25rem;
+  font-weight: 300;
+  color: #fff;
+  margin: 0;
+  position: relative;
+}
+
+strong {
+  font-weight: 900;
+}
+
+/* combinator */
+/* "+": h1 sibling */
+h1 + p {
+  color: #f18119;
+  font-weight: 900;
+  font-size: 1.3125rem;
+  text-transform: uppercase;
+  margin: 0;
+  position: relative;
+  /* padding-bottom: 1.5em; */
+}
+
+h2 {
+  font-size: 1.3125rem;
+  margin: 0;
+}
+
+/* combinator */
+/* "+": h2 sibling */
+h2 + p {
+  color: #f18119;
+  font-size: 1rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.top-text {
+  margin: 0 auto;
+  padding-top: 2px;
+  font-size: 0.625rem;
+  font-weight: 900;
+  color: #f18119;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+  order: -1;
+  position: relative;
+  border-top: 5px solid #f18119;
+  border-image: linear-gradient(to left, #ff713b, #ffa51d) 1;
+}
+
+.fine-print {
+  font-size: 0.625rem;
+  letter-spacing: 1px;
+}
+
+/* =================
+   BUTTON
+    ================= */
+
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 0.625rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 900;
+  border: 0;
+  cursor: pointer;
+}
+
+.btn-primary {
+  color: rgb(255, 255, 255);
+  background-image: linear-gradient(to left, #ff713b, #ffa51d);
+  transform: scale(1);
+  transition: transform 400ms;
+}
+
+.btn-primary:hover,
+.btn-primary:focus {
+  transform: scale(1.1);
+}
+
+/* =================
+   LAYOUT
+    ================= */
+
+.container {
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* INTRO SECTION */
+
+.container-intro {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 50vh;
+}
+
+.intro::before {
+  content: "";
+  background-image: url("../images/image1.jpg");
+  background-blend-mode: multiply;
+  background-size: cover;
+  background-position: center;
+  opacity: 0.5;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  bottom: 0px;
+  left: 0px;
+}
+
+.intro {
+  background-color: #404040;
+  padding: 0 0.5em 2em;
+  position: relative;
+}
+
+/* MAIN CONTENT */
+
+.main-content {
+  padding: 2em 1em;
+}
+
+/* This selector selects ALL direct children of the parent */
+/* .intro > *,
+.main-content > * {
+  max-width: 500px;
+  margin-right: auto;
+  margin-left: auto;
+} */
+
+/* FORM */
+
+form {
+  width: 80%;
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+input {
+  font-family: inherit;
+  text-align: inherit;
+  padding: 0.25em;
+  width: 100%;
+  margin-bottom: 0.5em;
+  border-radius: 5px;
+  border: 1px solid #404040;
+  transform: scale(1);
+  transition: transform 400ms;
+}
+
+/* input:focus {
+  transform: scale(1.1);
+} */
+
+/* =================
+   MEDIA QUERIES
+    ================= */
+
+@media (min-width: 575px) {
+  body {
+    font-size: 1.125rem;
+    display: flex;
+  }
+
+  h1 {
+    font-size: 3.5rem;
+  }
+
+  h2,
+  h1 + p {
+    font-size: 1.75rem;
+  }
+
+  .intro,
+  .intro::before,
+  .main-content {
+    min-height: 100vh;
+  }
+
+  .intro,
+  .main-content {
+    width: 50%;
+  }
+
+  .main-content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  /* This matches the height of its parent (.intro) */
+  .container-intro {
+    height: 100%;
+  }
+}
